@@ -46,6 +46,6 @@ function plotParams = plotParameters()
     plotParams.F1colors  = [cyan; green] ;
 
     % Folder to plot figures
-    plotParams.printPathExample = [ '../../figs/' ] ;
+    plotParams.printPathExample = [ '../../numerical_results/' ] ;
     mkdir(plotParams.printPathExample)
 end

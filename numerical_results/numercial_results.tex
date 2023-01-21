@@ -1,0 +1,160 @@
+\documentclass[3p,a4paper,11pt,review]{elsarticle}
+
+\usepackage{lineno}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{color}
+\usepackage[table]{xcolor}
+\usepackage{mathrsfs}
+\usepackage{amssymb,amstext,amsfonts,amsmath,amsthm}
+\usepackage{bm}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel}
+\usepackage{hyphenat}
+\usepackage{calc}
+\usepackage{graphicx,import}
+
+\usepackage{soul}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{arydshln}
+\usepackage{natbib}
+\usepackage[misc,geometry]{ifsym} 
+\usepackage{empheq}
+\usepackage{longtable}
+\usepackage{comment}
+
+\bibliographystyle{plain}\biboptions{authoryear}
+
+
+\usepackage{lineno}
+\newcommand*\patchAmsMathEnvironmentForLineno[1]{%
+	\expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+	\expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+	\renewenvironment{#1}%
+	{\linenomath\csname old#1\endcsname}%
+	{\csname oldend#1\endcsname\endlinenomath}}%
+\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+	\patchAmsMathEnvironmentForLineno{#1}%
+	\patchAmsMathEnvironmentForLineno{#1*}}%
+\AtBeginDocument{%
+	\patchBothAmsMathEnvironmentsForLineno{equation}%
+	\patchBothAmsMathEnvironmentsForLineno{align}%
+	\patchBothAmsMathEnvironmentsForLineno{flalign}%
+	\patchBothAmsMathEnvironmentsForLineno{alignat}%
+	\patchBothAmsMathEnvironmentsForLineno{gather}%
+	\patchBothAmsMathEnvironmentsForLineno{multline}%
+}
+
+\usepackage[]{algorithm2e}
+
+\hyphenation{ONSAS}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\usepackage{relsize}
+
+\definecolor{darkcandyapplered}{rgb}{0.64, 0.0, 0.0}
+\definecolor{darkred}{rgb}{0.55, 0.0, 0.0}
+
+
+\usepackage{bbm}
+
+
+
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+%
+\usepackage{pifont}
+%
+\newcommand{\failed}{%
+	\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$%
+}
+%
+\newcommand{\done}{%
+	\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$%
+}
+
+\newcommand{\miparra}[1]{\vspace{5mm} \textbf{#1}\\}
+
+\journal{?}
+
+\begin{document}
+	
+	
+	\begin{frontmatter}
+		
+		\title{A Consistent Co-rotational Formulation for Quasi-Steady Aerodynamic Nonlinear Analysis of Frame Structures}
+		
+		\author[1]{Mauricio C. Vanzulli}
+		\author[2]{Jorge M. Pérez Zerpa}
+		
+		\address[1]{Instituto de Ingeniería Mecánica y Producción Industrial, Facultad de Ingeniería, Universidad de la República, Montevideo, Uruguay}
+		
+		% Corresponding author
+		\address[2]{Instituto de Estructuras y Transporte, Facultad de Ingeniería, Universidad de la República, Montevideo, Uruguay}  
+		
+	\end{frontmatter}
+
+
+\section{Numerical results}
+
+
+
+\input{valsExampleCantileverBlade.tex}
+
+\subsection{Example 3}
+
+
+\subsubsection{Parameters}
+The parameters of this example are:
+
+\begin{itemize}
+	\item $d_c= \CantileverBladedch$ 
+	\item $L = \CantileverBladeL$
+	\item $E_{eq} = \CantileverBladeEeq$ GPa
+	\item $G_{eq} = \CantileverBladeGeq$ GPa
+	\item $v_{m} = \CantileverBladevm$ m/s
+	\item $tol_r = \CantileverBladetolF\times 10^{-7}$
+	\item $tol_u = \CantileverBladetolU0^{-15}$.
+	\item $\alpha = \CantileverBladealphaEnd^{\circ}$
+\end{itemize}
+
+
+\subsubsection{Numerical results}
+
+
+The torsional moment provided by geometric nonlinearities in F1 is $\CantileverBladetorsionalMomentFOne$ N.m while using F2 is $\CantileverBladetorsionalMomentFTwo$ N.m
+
+
+\begin{figure}[htb]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\resizebox{.9\textwidth}{!}{\input{BladeCantMomentsYZStatic.tex}}		
+		\caption{$M_y, M_z(\alpha)$.}
+		\label{fig:BladeCantMYMZStatic}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\resizebox{.9\textwidth}{!}{\input{BladeCantForcesStatic.tex}}		
+		\caption{$F_y$, $F_z$ $(\alpha)$.}
+		\label{fig:BladeCantForcesStatic}
+	\end{subfigure}
+	\caption{Example 3: Reaction bending moments $M_y(\alpha)$, $M_z(\alpha)$ and resultant shear forces $F_y(\alpha)$ and $F_z(\alpha)$ at node O.}
+	\label{fig:BladeCantStaticBending}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\resizebox{.45\textwidth}{!}{\input{BladeCantMomentXStatic.tex}}
+	\caption{Example 3: Torsional moment $M_x(\alpha)$ at node O.}
+	\label{fig:BladeCantMXStatic}
+\end{figure}
+
+
+\end{document}

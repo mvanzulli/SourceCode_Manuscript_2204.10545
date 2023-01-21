@@ -15,3 +15,13 @@ examples/*/output/*
 
 # Ignore output files
 *.out
+
+# Tex files
+*.aux
+*.bbl
+*.blg
+*.log
+*.pdf
+*.spl
+*.synctex.gz
+*.pdf

@@ -21,7 +21,7 @@ RUN cd SourceCode_Manuscript_2204.10545-main
 RUN find ./ -type f -iname "*.sh" -exec chmod +x {} \;
 
 # Downlowad ONSAS
-RUN ./download_ONSAS.sh
+RUN ./SourceCode_Manuscript_2204.10545-main/download_ONSAS.sh
 
 # Reproduce all examples results
 CMD ./run_all_examples.sh
