@@ -3,6 +3,8 @@
 # Development and implementation of a consistent co-rotational 
 # formulation for aerodynamic nonlinear analysis of frame structures.
 #
-# Run all examples and plot
+# Run all examples
 #
-for((i=1;i<=4;i++)); do cd Example_${i} && nohup bash reproduce_Example_${i}.sh && cd .. & done
+# Run Example 3 (Cantilever blade) 
+i = 3
+cd examples/Example_${i} && ./run_Example_${i}.sh && cd ../../

@@ -1,9 +1,11 @@
 # Ignore cloned ONSAS
 /ONSAS/
 
+# Ignore generate figures
+*figs/*
+
 # Ignore octave files
 *octave-workspace
-
 
 # Ignore vscode
 *.vscode
