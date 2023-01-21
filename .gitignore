@@ -11,7 +11,7 @@
 *.vscode
 
 # Ignore output folders form ONSAS
-src/examples/*/output/*
+examples/*/output/*
 
 # Ignore output files
 *.out
