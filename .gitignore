@@ -1,0 +1,11 @@
+# Ignore octave files
+*octave-workspace
+
+# Ignore vscode
+*.vscode
+
+# Ignore output folders form ONSAS
+src/examples/*/output/*
+
+# Ignore output files
+*.out
