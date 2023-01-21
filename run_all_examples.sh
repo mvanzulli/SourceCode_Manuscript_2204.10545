@@ -6,5 +6,5 @@
 # Run all examples
 #
 # Run Example 3 (Cantilever blade) 
-i = 3
+i=3
 cd examples/Example_${i} && ./run_Example_${i}.sh && cd ../../
