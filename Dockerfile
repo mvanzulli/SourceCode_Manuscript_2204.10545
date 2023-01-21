@@ -15,13 +15,16 @@ RUN unzip main.zip
 # Remove zip file
 RUN rm main.zip
 # Enter into the repo
-RUN cd SourceCode_Manuscript_2204.10545-main
+# WORKDIR /SourceCode_Manuscript_2204.10545-main
 
 # Give permission to all .ssh file
 RUN find ./ -type f -iname "*.sh" -exec chmod +x {} \;
 
 # Downlowad ONSAS
-RUN ./SourceCode_Manuscript_2204.10545-main/download_ONSAS.sh
+RUN cd SourceCode_Manuscript_2204.10545-main && ./download_ONSAS.sh
 
 # Reproduce all examples results
-CMD ./run_all_examples.sh
+RUN  cd SourceCode_Manuscript_2204.10545-main && ./reproduce_all_examples.sh
+
+# Copy out form the container
+# COPY SourceCode_Manuscript_2204.10545-main/numerical_results/BladeCantForcesStatic.tex ./

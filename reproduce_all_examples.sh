@@ -7,4 +7,4 @@
 #
 # Post process Example 3 (Cantilever blade) 
 i=3
-cd examples/Example_${i} && ./reproduce_Example_${i}.sh && cd ../../
+cd ./examples/Example_${i} && ./reproduce_Example_${i}.sh && cd ../../
