@@ -1,5 +1,9 @@
+# Ignore cloned ONSAS
+/ONSAS/
+
 # Ignore octave files
 *octave-workspace
+
 
 # Ignore vscode
 *.vscode
