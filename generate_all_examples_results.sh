@@ -5,6 +5,4 @@
 #
 # Run all examples
 #
-# Run Example 3 (Cantilever blade) 
-i=3
-cd examples/Example_${i} && ./run_Example_${i}.sh && cd ../../
+for((i=3;i<=3;i++)); do cd examples/Example_${i} && nohup bash reproduce_Example_${i}.sh && cd .. & done
