@@ -24,7 +24,7 @@ RUN find ./ -type f -iname "*.sh" -exec chmod +x {} \;
 RUN cd SourceCode_Manuscript_2204.10545-main && ./download_ONSAS.sh
 
 # Reproduce all examples results
-RUN  cd SourceCode_Manuscript_2204.10545-main && ./reproduce_all_examples.sh
+RUN  cd SourceCode_Manuscript_2204.10545-main && ./generate_all_examples_results.sh
 
 # Copy out form the container
 # COPY SourceCode_Manuscript_2204.10545-main/numerical_results/BladeCantForcesStatic.tex ./
