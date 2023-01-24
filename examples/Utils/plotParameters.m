@@ -12,7 +12,7 @@ function plotParams = plotParameters()
     % labels parameters:
     plotParams.axislw = 1 ; 
     plotParams.labelAxisFontSize = 20 ;
-    plotParams.ticsLabelsLegendFontSize = 18 ;   
+    plotParams.ticsLabelsLegendFontSize = 14 ;   
 
     % Colours to plot
     red               = '#D95319'                                   ;
@@ -46,6 +46,5 @@ function plotParams = plotParameters()
     plotParams.F1colors  = [cyan; green] ;
 
     % Folder to plot figures
-    plotParams.printPathExample = [ '../../numerical_results/' ] ;
-    mkdir(plotParams.printPathExample)
+    plotParams.printPathExample = [ '../../../tex/' ] ;
 end

@@ -11,8 +11,9 @@ function windVel = windVel3DStatic(x,t)
   vwindMax  = 30 ;
   thetaMin =  0  ;
   thetaMax  = 40 ;
-  thetaVel  = deg2rad(t / finalTime * (thetaMax - thetaMin ) + thetaMin) ;
-  windy = t * vwindMax * cos( thetaVel ) / finalTime ;
-  windz = -t * vwindMax * sin( thetaVel ) / finalTime ;
+  deltaT = 1 ;
+  thetaVel  = deg2rad((t - deltaT) / finalTime * (thetaMax - thetaMin ) + thetaMin) ;
+  windy =  vwindMax * cos( thetaVel ) ;
+  windz = - vwindMax * sin( thetaVel ) ;
   windVel = [ 0 windy windz ]' ; %Must be a column vector
 end

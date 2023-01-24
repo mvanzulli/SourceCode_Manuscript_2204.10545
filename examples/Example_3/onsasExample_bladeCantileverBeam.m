@@ -85,7 +85,7 @@ end
 % analysisSettings
 %----------------------------
 analysisSettings.methodName             = 'newtonRaphson'                          ;
-analysisSettings.finalTime              =   30                                     ;%the final time must be chaned in windVel3DStatic
+analysisSettings.finalTime              =   31                                     ;%the final time must be chaned in windVel3DStatic
 analysisSettings.deltaT                 =   1                                      ;
 analysisSettings.fluidProps             = {fluid.rho; fluid.nu; 'windVel3DStatic'} ;
 analysisSettings.booleanSelfWeight      = false                                    ;

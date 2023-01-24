@@ -1,0 +1,42 @@
+/examples/*/output/*
+*/html/*
+/html/*
+*.css
+/src/*.txt
+/src/*.oct
+*.mat
+*.vtk
+*.fig
+*.dat
+/examples/strings.txt
+Manifest.toml
+docs/build/
+docs/site/
+docs/src/examples/
+
+*.vscode
+
+# matlab autosave
+*.asv
+
+# macOS
+*.DS_Store
+
+octave-workspace
+
+# LaTeX outputs
+/*/*.aux
+/*/*.pdf
+/*/*.log
+/*/*.out
+/*/*.gz
+/*/*.toc
+/*/*.spl
+/*/*.xwm
+/*/*/*.aux
+/*/*/*.pdf
+/*/*/*.log
+/*/*/*.out
+/*/*/*.gz
+/*/*/*.toc
+/*/*/*.xwm

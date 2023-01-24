@@ -5,4 +5,6 @@
 #
 # Run all examples
 #
-for((i=3;i<=3;i++)); do cd examples/Example_${i} && nohup bash reproduce_Example_${i}.sh && cd .. & done
+examples=("3")
+#
+for i in "${examples[@]}"; do cd examples/Example_${i} && nohup bash reproduce_Example_${i}.sh && cd .. & done
