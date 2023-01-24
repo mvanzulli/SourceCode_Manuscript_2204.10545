@@ -105,11 +105,123 @@
 \section{Numerical results}
 
 
+\subsection{Example 1}
 
-\input{valsExampleCantileverBlade.tex}
+\input{valsExampleCircularReconfiguration.tex}
+
+The parameters of this example are:
+
+\begin{itemize}
+	\item $d= \CircularReconfigurationd$ m.
+	\item $L = \CircularReconfigurationL$ m.
+	\item $v_a \in \{ \CircularReconfigurationvaOne, \CircularReconfigurationvaTwo, \CircularReconfigurationvaThree, \CircularReconfigurationvaFour, \CircularReconfigurationvaFive, \CircularReconfigurationvaSix, \CircularReconfigurationvaSeven, \CircularReconfigurationvaEight, \CircularReconfigurationvaNine, \CircularReconfigurationvaTen \}$ all in m/s.
+	\item $\rho_f = \CircularReconfigurationrhoFluid$ kg/m$^3$.
+	\item $E = \CircularReconfigurationE$ MPa and density $\rho = \CircularReconfigurationrho$ kg/m$^3$.
+	\item $tol_r = \CircularReconfigurationtolF\times 10^{-7}$.
+	\item $tol_u = \CircularReconfigurationtolU0^{-15}$.
+%	\item $\alpha = \CircularReconfigurationalphaEnd^{\circ}$
+\end{itemize}
+
+\subsubsection{Example 1: Numerical results}
+
+\begin{itemize}
+	\item F1 and F2 works for static case with $v_a \leq \CircularReconfigurationvaFour$ m/s. 
+
+	\item It is reported that, for $v_a = \CircularReconfigurationvaFour$ m/s and using 20 elements, the formulation F3 requires $\CircularReconfigurationexecTimeRatio$ times the execution time required by F1 or F2 formulations.
+\end{itemize}
+
+
+
+\begin{figure}[htb]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\resizebox{.93\textwidth}{!}{\input{ex1CyR.tex}}
+		\caption{Scaled Cauchy $c_yc_d$ number vs reconfiguration number $\mathcal{R}$.}
+		\label{fig:ex1CuachyVsR}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\resizebox{.95\textwidth}{!}{\input{ex1deformed.tex}}
+		\caption{Deformed configurations for different $c_yc_d$ numbers.}
+		\label{fig:ex1DeformedConfig}
+	\end{subfigure}
+	\caption{Example 1: Drag reconfiguration validation against (Gosselin et Al, 2010).}
+	\label{fig:ex1StaticRecValidation}
+\end{figure}
+
+
+
+\begin{figure}[htb]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\resizebox{.93\textwidth}{!}{\input{ex1UyAvsTimeWindVelCase1.tex}}
+		\caption{$u_y(t)$ for $c_yc_d = \CircularReconfigurationcycdCaseOne \times 10^4$ (Case 1).}
+		\label{fig:reconfigurationBeamCase1UyA}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\resizebox{.95\textwidth}{!}{\input{ex1UyAvsTimeWindVelCase2.tex}}
+		\caption{$u_y(t)$ for $c_yc_d = \CircularReconfigurationcycdCaseTwo \times 10^2$ (Case 2).}
+		\label{fig:reconfigurationBeamCase2UyA}
+	\end{subfigure}
+	\caption{Example 1: Evolution of $u_y$ displacement of node A.}
+	\label{fig:reconfigurationCantBeamDynamic}
+\end{figure}
+
+\clearpage
+
+\subsection{Example 2}
+
+\input{valsExampleSimplePropeller.tex}
+
+The parameters of this example are:
+
+\begin{itemize}
+	\item $d= \SimplePropellerd$ m.
+	\item $L = \SimplePropellerL $ m.
+	\item $E_{flex} = \SimplePropellerEf$ kPa
+	\item $E_{rigid} = \SimplePropellerEr$ GPa
+	\item $\rho = \SimplePropellerrho$ kg/m$^3$
+	\item $c_l = 0.2$
+	\item $v_{a} = \SimplePropellerva$ m/s
+	\item $tol_r = \SimplePropellertolF0^{-6}$
+	\item $tol_u = \SimplePropellertolU0^{-12}$.
+	\item $\Delta t = \SimplePropellerdeltaT$ s. 
+
+\end{itemize}
+
+\subsubsection{Example 2: Numerical results}
+
+\begin{figure}[htb]
+	\centering
+	\resizebox{.5\textwidth}{!}{\input{valPropRigidThetaXO.tex}}
+	\caption{Results for $\theta_{x,\text{O}}(t)$.}
+	\label{fig:simplePropellerRigidThetaX}
+\end{figure}
+
+
+\begin{figure}[htb]
+	\begin{subfigure}{0.49\textwidth}
+		\centering
+		\resizebox{\textwidth}{!}{\input{valPropFlexThetaXO.tex}}
+		\caption{$\theta_{x,\text{O}}(t)$.}
+		\label{fig:simplePropellerFlexThetaXO}
+	\end{subfigure}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\resizebox{\textwidth}{!}{\input{valPropFlexThetaXA.tex}}
+		\caption{$\theta_{x,\text{A}}(t)$.}
+		\label{fig:simplePropellerFlexThetaXA}
+	\end{subfigure}
+	\caption{Example 2: Flexible case results of $\theta_{x,\text{A}}(t)$ and $\theta_{x,\text{O}}(t)$ rotations.}
+	\label{fig:simplePropellerFlexThetas}
+\end{figure}
+
+\clearpage 
 
 \subsection{Example 3}
 
+\input{valsExampleCantileverBlade.tex}
 
 \subsubsection{Parameters}
 The parameters of this example are:
@@ -122,14 +234,28 @@ The parameters of this example are:
 	\item $v_{m} = \CantileverBladevm$ m/s
 	\item $tol_r = \CantileverBladetolF\times 10^{-7}$
 	\item $tol_u = \CantileverBladetolU0^{-15}$.
-	\item $\alpha = \CantileverBladealphaEnd^{\circ}$
+	\item $\alpha_{max} = \CantileverBladealphaEnd^{\circ}$
+	
 \end{itemize}
 
 
-\subsubsection{Numerical results}
+\subsubsection{Example 3: Numerical results}
 
 
 The torsional moment provided by geometric nonlinearities in F1 is $\CantileverBladetorsionalMomentFOne$ N.m while using F2 is $\CantileverBladetorsionalMomentFTwo$ N.m
+
+
+\begin{itemize}
+	\item $d_c= \CantileverBladedch$ 
+	\item $L = \CantileverBladeL$
+	\item $E_{eq} = \CantileverBladeEeq$ GPa
+	\item $G_{eq} = \CantileverBladeGeq$ GPa
+	\item $v_{m} = \CantileverBladevm$ m/s
+	\item $tol_r = \CantileverBladetolF\times 10^{-7}$
+	\item $tol_u = \CantileverBladetolU0^{-15}$.
+	\item $\alpha_{max} = \CantileverBladealphaEnd^{\circ}$
+	
+\end{itemize}
 
 
 \begin{figure}[htb]
@@ -155,6 +281,57 @@ The torsional moment provided by geometric nonlinearities in F1 is $\CantileverB
 	\caption{Example 3: Torsional moment $M_x(\alpha)$ at node O.}
 	\label{fig:BladeCantMXStatic}
 \end{figure}
+
+
+\clearpage 
+
+\subsection{Example 4}
+
+\input{valsExampleWindTurbine.tex}
+
+\subsubsection{Parameters}
+
+The parameters of the blade simulated in this example are the same as used the previous example. 
+\begin{itemize}
+	\item $L = \WindTurbineL$ m.
+	\item $d_{ch} = \WindTurbinedch$ m.
+	\item $E = \WindTurbineEeq$ GPa. 
+	\item $G = \WindTurbineGeq$ GPa. 
+	\item $t_f = \WindTurbinefinalTime$ s.
+	\item $\Delta_t = \WindTurbinedeltaT$ s.
+	\item  $tol_r = \WindTurbinetolF0^{-5}$.
+	\item $tol_u = \WindTurbinetolU0^{-10}$.
+	\item $\WindTurbineelemBlade$ elements per blade.
+\end{itemize}
+
+
+
+\begin{figure}[htb]
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\resizebox{\textwidth}{!}{\input{thetaX.tex}}
+		\caption{$\theta_x(t)$ node O.}
+		\label{fig:windTurbineThetaXO}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\resizebox{\textwidth}{!}{\input{thetadotX.tex}}
+		\caption{$\dot{\theta_x}(t)$ node O.}
+		\label{fig:windTurbineThetadotXO}
+	\end{subfigure}
+	\caption{Example 4: $\theta_x$ angle and velocity rotation.}
+	\label{fig:windTurbineThetaX0}
+\end{figure}
+
+
+\begin{figure}[htb]                  
+	\centering                         
+	\resizebox{.5\textwidth}{!}{\input{dispsA.tex}}
+	\caption{Example 4: Displacements $u_y(t)$ and $u_z(t)$ of node A.}
+	\label{fig:windTurbineDispsA}
+\end{figure}
+
+
 
 
 \end{document}

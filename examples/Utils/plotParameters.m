@@ -46,5 +46,5 @@ function plotParams = plotParameters()
     plotParams.F1colors  = [cyan; green] ;
 
     % Folder to plot figures
-    plotParams.printPathExample = [ '../../../tex/' ] ;
+    plotParams.printPathExample = [ '../../numerical_results/' ] ;
 end
