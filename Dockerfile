@@ -8,23 +8,20 @@
 # Start with
 FROM gnuoctave/octave:7.3.0
 
-# Clone the repo  
-RUN wget https://github.com/mvanzulli/SourceCode_Manuscript_2204.10545/archive/refs/heads/main.zip
-# Unizp in a folder named ONSAS with the following command:
-RUN unzip main.zip
-# Remove zip file
-RUN rm main.zip
-# Enter into the repo
-# WORKDIR /SourceCode_Manuscript_2204.10545-main
+# Add the repo folder to the container
+ADD . ./
 
-# Give permission to all .ssh file
-RUN find ./ -type f -iname "*.sh" -exec chmod +x {} \;
+# Download ONSAS
+WORKDIR . 
 
 # Downlowad ONSAS
-RUN cd SourceCode_Manuscript_2204.10545-main && ./download_ONSAS.sh
+RUN ./download_ONSAS.sh
 
-# Reproduce all examples results
-RUN  cd SourceCode_Manuscript_2204.10545-main && ./generate_all_examples_results.sh
+# Create a volume 
+VOLUME /data
+
+# Run the scripts and copy the 
+CMD ["./generate_all_examples_results.sh"] 
 
 # Copy out form the container
-# COPY SourceCode_Manuscript_2204.10545-main/numerical_results/BladeCantForcesStatic.tex ./
+COPY SourceCode_Manuscript_2204.10545-main/numerical_results/BladeCantForcesStatic.tex ./
