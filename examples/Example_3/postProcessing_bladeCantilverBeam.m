@@ -79,7 +79,7 @@ set(labx, 'FontSize', plotParams.ticsLabelsLegendFontSize) ;
 set(laby, 'FontSize', plotParams.ticsLabelsLegendFontSize) ;
 % print figure
 namefig3 = strcat(plotParams.printPathExample, 'BladeCantForcesStatic') ;
-print(fig3, namefig3, '-depslatex') ;
+print(fig3, namefig3, '-depslatex')
 close(3)
 %------------------
 % Static moments
