@@ -2,10 +2,14 @@
 This repository contains the source codes used to generate the numerical results presented in the manuscript entitled: **"A Consistent Co-rotational Formulation for Quasi-Steady Aerodynamic Nonlinear Analysis of Frame Structure"** by M. Vanzulli and J. M. Pérez Zerpa . The manuscript is available at [this arxiv link](https://arxiv.org/abs/2204.10545).
 
 
-## Generating example results
+## How to generate the numerical results
 
-Each example is structured 
 
+In linux: open a bash terminal and run the script
+
+```
+$ ./generate_all_examples_results.sh 
+```
 
 
 ## Reproducibility 
