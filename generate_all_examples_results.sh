@@ -14,6 +14,6 @@ for i in {1..4}
 do
   echo "generating Example${i}"
   cd examples/Example_${i}
-  ./reproduce_Example_${i}.sh
+  nohup bash ./reproduce_Example_${i}.sh
   cd ..
 done
