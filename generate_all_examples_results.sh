@@ -1,10 +1,19 @@
-# Copyright (C) 2022, Mauricio C. Vanzulli, Jorge M. Perez Zerpa.
+# Copyright (C) 2023, Mauricio C. Vanzulli, Jorge M. Perez Zerpa.
 #
-# Development and implementation of a consistent co-rotational 
-# formulation for aerodynamic nonlinear analysis of frame structures.
 #
+if [ -d "ONSAS" ] 
+then
+  echo "ONSAS dir found." 
+else
+  echo "Downloading ONSAS"
+  ./download_ONSAS.sh
+fi
 # Run all examples
 #
-examples=("3")
-#
-for i in "${examples[@]}"; do cd examples/Example_${i} && nohup bash reproduce_Example_${i}.sh && cd .. & done
+for i in {1..4}
+do
+  echo "generating Example${i}"
+  cd examples/Example_${i}
+  nohup bash ./reproduce_Example_${i}.sh
+  cd ..
+done
